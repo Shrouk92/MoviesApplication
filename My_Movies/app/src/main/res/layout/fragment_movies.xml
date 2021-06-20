@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:recycler="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="rvb"
+            type="com.example.my_movies.viewmodels.PopularViewModel" />
+        
+
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.MoviesFragment" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recycle_View"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            tools:listitem="@layout/movies_item"
+            recycler:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:padding="10dp"
+            recycler:adapter="@{rvb.moviesRecyclerViewAdapter}" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
