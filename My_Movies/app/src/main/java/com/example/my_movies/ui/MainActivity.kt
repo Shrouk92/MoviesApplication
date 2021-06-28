@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.my_movies.R
 import com.example.my_movies.adapters.ViewPagerAdapter
 import com.example.my_movies.databinding.ActivityMainBinding
+import com.example.my_movies.repository.Repository
 import com.example.my_movies.viewmodels.ActivityViewModel
 import com.example.my_movies.viewmodels.PopularViewModel
 import com.google.android.gms.ads.AdRequest
@@ -65,6 +66,21 @@ class MainActivity : AppCompatActivity() {
             ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 tabLayout.selectTab(tabLayout.getTabAt(position))
+
+                when(tabLayout.selectedTabPosition)
+                {
+                    0 -> {
+                        Repository.init("popular")
+                    }
+
+                    1 -> {
+                        Repository.init("top_rated")
+                    }
+                    2-> {
+                        Repository.init("now_playing")
+
+                    }
+                }
             }
         })
 
