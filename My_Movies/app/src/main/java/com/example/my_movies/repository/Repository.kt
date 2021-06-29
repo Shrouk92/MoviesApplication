@@ -7,7 +7,8 @@ import kotlinx.coroutines.Deferred
 
 object Repository {
 
-    private var endPoint: String = ""
+     var endPoint: String=""
+
 
     fun init(data: String)  {
         endPoint = data

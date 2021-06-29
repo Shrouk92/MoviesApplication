@@ -23,6 +23,7 @@
             android:layout_gravity="center"
             tools:listitem="@layout/movies_item"
             recycler:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            recycler:spanCount="2"
             android:padding="10dp"
             recycler:adapter="@{rvb.moviesRecyclerViewAdapter}" />
     </androidx.appcompat.widget.LinearLayoutCompat>

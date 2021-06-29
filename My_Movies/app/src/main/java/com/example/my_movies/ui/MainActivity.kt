@@ -61,13 +61,12 @@ class MainActivity : AppCompatActivity() {
         }.attach()
 
 
-        viewpager
-            .registerOnPageChangeCallback( object :
+        viewpager.registerOnPageChangeCallback( object :
             ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 tabLayout.selectTab(tabLayout.getTabAt(position))
 
-                when(tabLayout.selectedTabPosition)
+                when(position)
                 {
                     0 -> {
                         Repository.init("popular")
